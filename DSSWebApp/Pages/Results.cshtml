@@ -5,6 +5,19 @@
 }
 
 <style>
+    .custom-border {
+        border: 1px solid #eaeaea;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
     .recommendation {
         display: none; /* hide all recommendations by default */
         border: 1px solid #ccc;
@@ -14,48 +27,184 @@
     }
 </style>
 
+<div class="jumbotron bg-light">
+    <h1 class="display-4">Welcome to DSS Recommendations!</h1>
+    <p class="lead">Your answers have been used to generate recommendations for suitable management processes and tools for your telework software development team. To view the recommendations, please click the "Next" button below.</p>
+    <hr class="my-4">
+    <p>Please note that the DSS is still under development, so it's vital to double-check the recommendations before implementing them.</p>
+    <p class="mb-4">After your project completion, you'll be invited to evaluate the DSS recommendations. This feedback will enhance the DSS, ensuring it's even more beneficial for future project managers. Thank you for your contribution!</p>
+    <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+    <button class="btn btn-success finish-button" style="display: none;" onclick="displayAlert();">Finish</button>
+
+
+</div>
+
 @* How high is the level of trust and commitment within the project team? *@
-@if (!string.IsNullOrEmpty(Model.TrustRecommendationHtml))
+@if (Model.IsTrustRecommendation)
 {
-    <div class="recommendation">
-        @Html.Raw(Model.TrustRecommendationHtml)
+    <div class="container mt-5 recommendation-block" style="display:none;">
+        <div class="custom-border">
+            <p class="lead">We recommend the use of the <strong>Theseus prototype</strong> to address the team awareness and trust issues in your project. The Theseus prototype is a promising tool that visualizes and analyzes the availability and responsiveness of remote team members, which can help to build trust and improve collaboration. The Theseus prototype architecture consists of four components:</p>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>1- Collector:</strong> This component uses JIRA's REST API to connect to a project's JIRA issue repository, retrieves all open issues grouped by project, and stores them in an object database.</li>
+                <li class="list-group-item"><strong>2- Extractor/generator:</strong> This component extracts issues, their priorities, and assigned developers from the database and cross-links the issues and developers associated with them with a generated set of developer names and pictures. The generator component also generates a set of e-mail responsiveness times for each developer using a normal distribution with a mean reply time of 24 hours. It then standardizes the scores for each team member. The generator also creates locations for team members using locations from a previous study and times of each day of the week when developers are active at the keyboard.</li>
+                <li class="list-group-item"><strong>3- Analyzer:</strong> This component creates a bi-partite, socio-technical graph where nodes are either people or software artifacts (e.g., work items), and edges are one of several relationships (e.g., work item assigned to person).</li>
+                <li class="list-group-item"><strong>4- Visualizer:</strong> This component creates one of several types of visualizations using the socio-technical graph created by the analyzer as input.</li>
+            </ul>
+
+            <p class="mt-4 mb-2"><strong>The Theseus prototype provides three visualizations of the availability and responsiveness of remote team members:</strong></p>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>1- Average reply time:</strong> This visualization shows the average reply time of a remote team member compared to other team members at the same location. The average time is marked by a small vertical 62 notch. Developers who tend to reply quicker than average have a blue dot to the left of the notch; developers who reply slower have a blue dot to the right of the notch. The horizontal distance from the notch is calculated from the number of standard deviations away from the average.</li>
+                <li class="list-group-item"><strong>2- Project participation:</strong> This visualization shows a developer's participation in each project with each slice of the pie corresponding to the number of assigned work items to that developer in the project.</li>
+                <li class="list-group-item"><strong>3- Time zone overlap:</strong> This visualization shows, for each hour, the remote developer's corresponding time. It shows how many overlapping work hours there are between the user of Theseus and the remote developer. A black dot on each hour indicates that the developer is active (at the keyboard) during that time.</li>
+            </ul>
+
+            <p class="mt-4">The Theseus prototype has the potential to be a valuable tool for software teams. By helping teams to understand the availability and responsiveness of their remote team members, the prototype can help to build trust and improve collaboration. For example, the prototype could be used to help teams to identify remote team members who may be overloaded or who may be working in a different time zone. The prototype could also be used to help teams to identify remote team members who are working on a lot of projects or who are focused on a particular project.</p>
+
+            <img src="images/1.png">
+            <img src="images/2.png">
+        </div>
+
+        <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="displayAlert();">Finish</button>
+
     </div>
 }
 
-<!-- Add more recommendations as needed -->
-<!-- <div class="recommendation">
-    Your next recommendation here
-</div>
-... -->
+@if (Model.IsTurnoverRecommendation)
+{
+    <div  class="container mt-5 recommendation-block" style="display:none;">
+        <div class="container mt-4">
+            <h2>Onboarding Model for Agile Teams</h2>
+            <p class="lead">
+                For teams with high turnover, we recommend the use of the onboarding model for agile teams proposed in the paper
+                <em>"An onboarding model for integrating newcomers into agile project teams"</em>.
+            </p>
 
-<button id="nextRecommendation">Next Recommendation</button>
+            <p>
+                This model is designed to help teams quickly and effectively integrate new team members, which is especially important in teams with high turnover.
+            </p>
 
-<!-- Inserting JavaScript at the bottom of the Razor page -->
+            <h3>The Onboarding Model Components</h3>
+            <ol>
+                <li>
+                    <strong>Onboarding activities:</strong>
+                    These activities help newcomers learn about the team, project, and company culture, and to get started on their first tasks.
+                </li>
+                <li>
+                    <strong>Individual adjustments:</strong>
+                    These adjustments are made to accommodate the individual needs of newcomers, such as providing them with additional training or support.
+                </li>
+                <li>
+                    <strong>Workplace adjustments:</strong>
+                    Adjustments to the team's workflow or environment to make it more welcoming and supportive for newcomers.
+                </li>
+                <li>
+                    <strong>Feedback and evaluation:</strong>
+                    Providing newcomers with regular feedback on their performance and evaluating the effectiveness of the onboarding process.
+                </li>
+            </ol>
+
+            <p>
+                By implementing all four components of this onboarding model, teams with high turnover can reduce the negative impact of turnover on team productivity and morale.
+            </p>
+
+            <h3>Implementation Recommendations</h3>
+            <ol>
+                <li>
+                    <strong>Onboarding activities:</strong>
+                    <ul>
+                        <li>Create a comprehensive onboarding plan with all essential information for new team members.</li>
+                        <li>Provide access to resources like team documentation, code repositories, and project management tools.</li>
+                        <li>Assign newcomers to a mentor or buddy to help them acclimate.</li>
+                        <li>Establish regular check-ins for progress discussions and feedback.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Individual adjustments:</strong>
+                    <ul>
+                        <li>Be flexible and accommodating during onboarding.</li>
+                        <li>Provide additional training or support if needed.</li>
+                        <li>Accommodate new team members with disabilities or special needs.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Workplace adjustments:</strong>
+                    <ul>
+                        <li>Establish a welcoming environment for new team members.</li>
+                        <li>Be patient and understanding as they acclimate.</li>
+                        <li>Encourage veteran team members to help and support newcomers.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Feedback and evaluation:</strong>
+                    <ul>
+                        <li>Provide regular feedback on performance.</li>
+                        <li>Encourage newcomers to seek feedback from their peers.</li>
+                        <li>Conduct surveys or interviews to gauge their onboarding experience.</li>
+                        <li>Track metrics like onboarding success rate and the time to productivity.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <p>
+                By adhering to these recommendations, teams with high turnover can swiftly and efficiently integrate new members, mitigating the adverse effects of high turnover on morale and productivity.
+            </p>
+            <img src="images/3.png">
+            <img src="images/4.png">
+            <img src="images/5.png">
+        </div>
+        <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="displayAlert();">Finish</button>
+
+    </div>
+}
+
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let recommendations = document.querySelectorAll('.recommendation');
-        let currentIndex = 0;
-
-        // Function to hide all recommendations
-        function hideAll() {
-            recommendations.forEach(function (rec) {
-                rec.style.display = 'none';
-            });
+   
+    function showNext(buttonElement) {
+        // Hide the introduction div
+        let introDiv = document.querySelector('.jumbotron.bg-light');
+        if (introDiv) {
+            introDiv.style.display = 'none';
         }
 
-        // Show the first recommendation on page load
-        if (recommendations.length > 0) {
-            recommendations[0].style.display = 'block';
+        // Get all recommendation blocks
+        let blocks = Array.from(document.querySelectorAll('.recommendation-block'));
+
+        // Find the currently shown recommendation block
+        let currentBlock = buttonElement.closest('.recommendation-block');
+
+        if (!currentBlock) {
+            // If the button was not inside a recommendation block, show the first one
+            blocks[0].style.display = 'block';
+            return;
         }
 
-        // Add click event to the next button
-        document.getElementById('nextRecommendation').addEventListener('click', function () {
-            hideAll();
-            currentIndex++;
-            if (currentIndex >= recommendations.length) {
-                currentIndex = 0;  // Loop back to the start if it's the last recommendation
+        // Hide the current block
+        currentBlock.style.display = 'none';
+
+        // Find the next recommendation block
+        let currentIndex = blocks.indexOf(currentBlock);
+        if (currentIndex !== -1 && currentIndex < blocks.length - 1) {
+            blocks[currentIndex + 1].style.display = 'block';
+
+            // If the next block is the last one
+            if (currentIndex === blocks.length - 2) {
+                let nextButton = blocks[currentIndex + 1].querySelector('.next-button');
+                let finishButton = blocks[currentIndex + 1].querySelector('.finish-button');
+
+                if (nextButton) nextButton.style.display = 'none';
+                if (finishButton) finishButton.style.display = 'block';
             }
-            recommendations[currentIndex].style.display = 'block';
-        });
-    });
+        } else {
+            // This is just a fallback, showing the first block if there's some error.
+            blocks[0].style.display = 'block';
+        }
+    }
+    function displayAlert() {
+        alert('Thank you for going through the recommendations!');
+    }
 </script>
