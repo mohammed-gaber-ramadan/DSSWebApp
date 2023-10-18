@@ -7,10 +7,15 @@ namespace DSSWebApp.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
+
+        [BindProperty]
+        public string PQ1 { get; set; }
+        public string RecommendationHtml { get; set; }
 
         public void OnGet()
         {
@@ -49,5 +54,32 @@ namespace DSSWebApp.Pages
             ViewData["Option5PQ8"] = "5 = Evaluation";
         }
 
+        public RedirectToPageResult OnPost()
+            {
+            // Set the TempData property
+            TempData["PQ1"] = PQ1;
+            // ... Repeat for other questions ...
+
+            // Redirect to the Results page
+            return RedirectToPage("/Results");
+
+            // Check the answers. For example:
+            //if (PQ1 == "1")
+            //{
+            //    RecommendationHtml = GetRecommendationHtml();
+            //}
+            //else
+            //{
+            //    // No recommendation or you can provide other default recommendations
+            //    RecommendationHtml = "<p>No recommendations available for your selection.</p>";
+            //}
+
+            //return RedirectToPage("/Results");
+        }
+
+        private string GetRecommendationHtml()
+        {
+            return "Hello world";
+        }
     }
 }
