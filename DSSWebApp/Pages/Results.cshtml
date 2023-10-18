@@ -1,0 +1,12 @@
+﻿@page
+@model DSSWebApp.Pages.ResultsModel
+@{
+    ViewData["Title"] = "Recommendations";
+}
+
+@if (!string.IsNullOrEmpty(Model.RecommendationHtml))
+{
+    <div>
+        @Html.Raw(Model.RecommendationHtml)
+    </div>
+}
