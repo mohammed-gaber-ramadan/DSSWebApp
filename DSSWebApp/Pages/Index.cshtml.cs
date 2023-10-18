@@ -63,23 +63,8 @@ namespace DSSWebApp.Pages
             // Redirect to the Results page
             return RedirectToPage("/Results");
 
-            // Check the answers. For example:
-            //if (PQ1 == "1")
-            //{
-            //    RecommendationHtml = GetRecommendationHtml();
-            //}
-            //else
-            //{
-            //    // No recommendation or you can provide other default recommendations
-            //    RecommendationHtml = "<p>No recommendations available for your selection.</p>";
-            //}
-
-            //return RedirectToPage("/Results");
         }
 
-        private string GetRecommendationHtml()
-        {
-            return "Hello world";
-        }
+       
     }
 }
