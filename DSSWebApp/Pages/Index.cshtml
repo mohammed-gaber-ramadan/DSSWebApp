@@ -5,12 +5,29 @@
 }
 
 <style>
+    /* Basic styling for the entire container */
+    .container {
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Styles for the interactive cards */
     .question-card {
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        margin-bottom: 20px;
         transition: all 0.3s ease-in-out;
     }
-    .question-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
+        .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+    /* Radio button styles */
+    .radio-option {
+        margin: 5px 0;
+        padding-left: 25px;
     }
 </style>
 
@@ -35,55 +52,22 @@
         Once you've concluded your project, we would appreciate it if you could evaluate the recommendations provided by the DSS. Your feedback is vital. It will help us refine the system, ensuring it becomes increasingly accurate and beneficial for project managers in the future.
     </p>
 
-    <p>Thank you for your participation and trust in our system!</p>    
+    <p>Thank you for your participation and trust in our system!</p>
+
     <form method="post">
-
-        <!-- Project Characteristics Questions -->
-        <h2 class="mb-4">Project Characteristics</h2>
-        @for (int i = 1; i <= 8; i++)
+        @foreach (var question in Model.Questions)
         {
-            <div class="card question-card mb-4 p-3">
-                <div class="card-body">
-                    <h5 class="card-title">@ViewData[$"ProjectQuestion{i}"]</h5>
-                    <div>
-                        @for (int j = 1; j <= 5; j++)
-                        {
-                            string optionValue = i == 8 ? ViewData[$"Option{j}PQ8"].ToString() : ViewData[$"Option{j}"].ToString();
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="PQ@(i)" value="@j" required>
-                                <label class="form-check-label">
-                                    @optionValue
-                                </label>
-                            </div>
-                        }
+            <div class="question-card">
+                <label for="@question.Id">@question.Text</label>
+                @foreach (var option in question.Options)
+                {
+                    <div class="radio-option">
+                        <input type="radio" name="@question.Id" value="@option" required>
+                        <label>@option</label>
                     </div>
-                </div>
+                }
             </div>
         }
-
-        <!-- Team Characteristics Questions -->
-        <h2 class="mb-4">Team Characteristics</h2>
-        @for (int i = 1; i <= 8; i++)
-        {
-            <div class="card question-card mb-4 p-3">
-                <div class="card-body">
-                    <h5 class="card-title">@ViewData[$"TeamQuestion{i}"]</h5>
-                    <div>
-                        @for (int j = 1; j <= 5; j++)
-                        {
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="TQ@(i)" value="@j" required>
-                                <label class="form-check-label">
-                                    @ViewData["Option" + j]
-                                </label>
-                            </div>
-                        }
-                    </div>
-                </div>
-            </div>
-        }
-
-        <button type="submit" class="btn btn-primary mt-3">Submit</button>
-
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

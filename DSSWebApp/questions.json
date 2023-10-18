@@ -1,0 +1,178 @@
+[
+  {
+    "id": "Q1",
+    "text": "How large is the project team?",
+    "options": [
+      "Very small",
+      "Small",
+      "Medium",
+      "Large",
+      "Very large"
+    ]
+  },
+  {
+    "id": "Q2",
+    "text": "How complex is the project?",
+    "options": [
+      "Very simple",
+      "Simple",
+      "Medium",
+      "Complex",
+      "Very complex"
+    ]
+  },
+  {
+    "id": "Q3",
+    "text": "How much uncertainty is there in the project?",
+    "options": [
+      "Very low",
+      "Low",
+      "Medium",
+      "High",
+      "Very high"
+    ]
+  },
+  {
+    "id": "Q4",
+    "text": "How tight are the project's deadlines?",
+    "options": [
+      "Very loose",
+      "Loose",
+      "Medium",
+      "Tight",
+      "Very tight"
+    ]
+  },
+  {
+    "id": "Q5",
+    "text": "How constrained is the project's budget?",
+    "options": [
+      "Very loose",
+      "Loose",
+      "Medium",
+      "Tight",
+      "Very tight"
+    ]
+  },
+  {
+    "id": "Q6",
+    "text": "How involved is the customer in the project?",
+    "options": [
+      "Very low",
+      "Low",
+      "Medium",
+      "High",
+      "Very high"
+    ]
+  },
+  {
+    "id": "Q7",
+    "text": "How high are the risk factors in the project?",
+    "options": [
+      "Very low",
+      "Low",
+      "Medium",
+      "High",
+      "Very high"
+    ]
+  },
+  {
+    "id": "Q8",
+    "text": "What is the type of software project?",
+    "options": [
+      "New development",
+      "Maintenance & enhancement",
+      "Integration",
+      "Migration",
+      "Evaluation"
+    ]
+  },
+  {
+    "id": "Q9",
+    "text": "What is the average level of experience of the project team members?",
+    "options": [
+      "Very low",
+      "Low",
+      "Medium",
+      "High",
+      "Very high"
+    ]
+  },
+  {
+    "id": "Q10",
+    "text": "What is the average level of skills and expertise of the project team members?",
+    "options": [
+      "Very low",
+      "Low",
+      "Medium",
+      "High",
+      "Very high"
+    ]
+  },
+  {
+    "id": "Q11",
+    "text": "How good is the communication and collaboration within the project team?",
+    "options": [
+      "Very poor",
+      "Poor",
+      "Medium",
+      "Good",
+      "Very good"
+    ]
+  },
+  {
+    "id": "Q12",
+    "text": "How high is the level of trust and commitment within the project team?",
+    "options": [
+      "Very low",
+      "Low",
+      "Medium",
+      "High",
+      "Very high"
+    ]
+  },
+  {
+    "id": "Q13",
+    "text": "How diverse is the project team in terms of culture and background?",
+    "options": [
+      "Very low",
+      "Low",
+      "Medium",
+      "High",
+      "Very high"
+    ]
+  },
+  {
+    "id": "Q14",
+    "text": "To what extent does your team have experience using agile software development methodologies?",
+    "options": [
+      "Very little experience",
+      "Some experience",
+      "Moderate experience",
+      "Extensive experience",
+      "Very extensive experience"
+    ]
+  },
+  {
+    "id": "Q15",
+    "text": "To what extent does your team have experience using cloud-based software development tools?",
+    "options": [
+      "Very little experience",
+      "Some experience",
+      "Moderate experience",
+      "Extensive experience",
+      "Very extensive experience"
+    ]
+  },
+  {
+    "id": "Q16",
+    "text": "How frequently do team members leave and join the team?",
+    "options": [
+      "Very rarely",
+      "Rarely",
+      "Sometimes",
+      "Often",
+      "Very often"
+    ]
+  }
+]

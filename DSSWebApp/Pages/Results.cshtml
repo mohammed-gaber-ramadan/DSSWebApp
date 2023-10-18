@@ -4,9 +4,58 @@
     ViewData["Title"] = "Recommendations";
 }
 
-@if (!string.IsNullOrEmpty(Model.RecommendationHtml))
+<style>
+    .recommendation {
+        display: none; /* hide all recommendations by default */
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+    }
+</style>
+
+@* How high is the level of trust and commitment within the project team? *@
+@if (!string.IsNullOrEmpty(Model.TrustRecommendationHtml))
 {
-    <div>
-        @Html.Raw(Model.RecommendationHtml)
+    <div class="recommendation">
+        @Html.Raw(Model.TrustRecommendationHtml)
     </div>
 }
+
+<!-- Add more recommendations as needed -->
+<!-- <div class="recommendation">
+    Your next recommendation here
+</div>
+... -->
+
+<button id="nextRecommendation">Next Recommendation</button>
+
+<!-- Inserting JavaScript at the bottom of the Razor page -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let recommendations = document.querySelectorAll('.recommendation');
+        let currentIndex = 0;
+
+        // Function to hide all recommendations
+        function hideAll() {
+            recommendations.forEach(function (rec) {
+                rec.style.display = 'none';
+            });
+        }
+
+        // Show the first recommendation on page load
+        if (recommendations.length > 0) {
+            recommendations[0].style.display = 'block';
+        }
+
+        // Add click event to the next button
+        document.getElementById('nextRecommendation').addEventListener('click', function () {
+            hideAll();
+            currentIndex++;
+            if (currentIndex >= recommendations.length) {
+                currentIndex = 0;  // Loop back to the start if it's the last recommendation
+            }
+            recommendations[currentIndex].style.display = 'block';
+        });
+    });
+</script>
