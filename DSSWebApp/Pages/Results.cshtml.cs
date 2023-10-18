@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Routing;
 using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
@@ -16,6 +17,7 @@ namespace DSSWebApp.Pages
 
         public bool IsTrustRecommendation { get; set; }
         public bool IsTurnoverRecommendation { get; set; }
+        public bool IsSkillsRecommendation { get; set; }
 
 
         public void OnGet()
@@ -49,6 +51,18 @@ namespace DSSWebApp.Pages
                     else
                     {
                         IsTurnoverRecommendation = false;
+                    }
+                }
+                if (answer.Key == "Q10")
+                {
+                    // What is the average level of skills and expertise of the project team members?
+                    if (answer.Value == "Very low" || answer.Value == "Low" || answer.Value == "Medium")
+                    {
+                        IsSkillsRecommendation = true;
+                    }
+                    else
+                    {
+                        IsSkillsRecommendation = false;
                     }
                 }
             }

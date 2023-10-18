@@ -34,7 +34,7 @@
     <p>Please note that the DSS is still under development, so it's vital to double-check the recommendations before implementing them.</p>
     <p class="mb-4">After your project completion, you'll be invited to evaluate the DSS recommendations. This feedback will enhance the DSS, ensuring it's even more beneficial for future project managers. Thank you for your contribution!</p>
     <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
-    <button class="btn btn-success finish-button" style="display: none;" onclick="displayAlert();">Finish</button>
+    <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
 
 
 </div>
@@ -68,7 +68,7 @@
         </div>
 
         <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
-        <button class="btn btn-success finish-button" style="display: none;" onclick="displayAlert();">Finish</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
 
     </div>
 }
@@ -157,10 +157,97 @@
             <img src="images/5.png">
         </div>
         <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
-        <button class="btn btn-success finish-button" style="display: none;" onclick="displayAlert();">Finish</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
 
     </div>
 }
+
+@if (Model.IsSkillsRecommendation)
+{
+    <div  class="container mt-5 recommendation-block" style="display:none;">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="display-4">Remote Team Training Program</h2>
+                    <p>
+                        Teams with low remote team management capabilities may benefit from using the remote team training program proposed in the paper <em>"Developing a remote team training program based on the space flight resource management model"</em>.
+                    </p>
+                    <h3>Background</h3>
+                    <p>
+                        It is based on the astronaut skill set model (SFRM), which identifies nine key skills that are essential for effective remote team management: communication, cross-cultural intelligence, situational awareness, decision-making, teamwork, team care, leadership, followership, and conflict management.
+                    </p>
+                    <p>
+                        The training program is delivered through an experiential team training game. Participants are divided into teams and tasked with completing a mission within a limited time frame. The game is designed to challenge participants to use their SFRM skills to work effectively as a team and to achieve their goal.
+                    </p>
+                    <h3>How to use the remote team training program</h3>
+                    <p>
+                        The remote team training program can be used by any organization that wants to improve the effectiveness of its remote teams. It is particularly well-suited for organizations that have newly formed remote teams or teams that are struggling to perform well.
+                    </p>
+                    <ol>
+                        <li>Gather a group of participants who are interested in learning about remote team management.</li>
+                        <li>Divide the participants into teams of 5-10 people.</li>
+                        <li>Set up the training game materials.</li>
+                        <li>Explain the rules of the game to the participants.</li>
+                        <li>Start the game!</li>
+                        <li>Monitor the participants' progress and provide feedback as needed.</li>
+                        <li>Debrief the game with the participants at the end to discuss their learnings and how they can apply them to their real work.</li>
+                    </ol>
+                    <h3>Why use the remote team training program?</h3>
+                    <ul>
+                        <li>It is a fun and engaging way to learn about remote team management.</li>
+                        <li>It is based on evidence-based research on the skills that are essential for effective remote team management.</li>
+                        <li>It is flexible and can be customized to meet the specific needs of your organization.</li>
+                        <li>It is relatively inexpensive to implement.</li>
+                    </ul>
+                    <p>
+                        The remote team training program is an effective and efficient way to improve the effectiveness of remote teams. It is a fun and engaging way for participants to learn about remote team management skills, and it is based on evidence-based research. If you are looking for a way to improve the performance of your remote teams, I encourage you to consider using the remote team training program.
+                    </p>
+                    <img src="images/6.png">
+                    <img src="images/7.png">
+                    <img src="images/8.png">
+                    <img src="images/9.png">
+                    <img src="images/10.png">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
+    </div>
+}
+
+<div class="container mt-5 end-survey" style="display:none;">
+    <div class="card">
+        <div class="card-header">
+            <h4>Dear Project Manager,</h4>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                Thank you for taking the time to complete the DSS questions.
+            </p>
+            <p class="card-text">
+                We wish you the best of luck with your project! We hope that the DSS recommendations are helpful. Please note that the DSS is still in beta version, so we recommend that you double-check the recommendations before implementing them.
+            </p>
+            <p class="card-text">
+                After your project is finished, we will request an evaluation survey for the DSS recommendations on your project based on if the project finished on budget, duration and provided all the functionality requested.
+            </p>
+            <p class="card-text">
+                Again, thank you for using the DSS. We appreciate your support!
+            </p>
+            <p class="card-text">
+                Sincerely,
+                <br>
+                [Mohammed Gaber]
+            </p>
+        </div>
+        <div class="card-footer">
+            <h5>Additional notes:</h5>
+            <ul>
+                <li>The DSS recommendations are based on the information that you provided in the DSS questionnaire. If any of the information you provided has changed, please take the questionnaire again to ensure that the recommendations are still accurate.</li>
+                <li>The DSS recommendations are not a guarantee of success. The success of your project will depend on a number of factors, including the experience and skills of your team members, the resources that are available to you, and the support that you receive from stakeholders.</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <script>
    
@@ -203,8 +290,21 @@
             // This is just a fallback, showing the first block if there's some error.
             blocks[0].style.display = 'block';
         }
+        setTimeout(() => {
+            window.scrollTo(0, 0);  // Scroll to the top of the screen after a delay
+        }, 200);  // 200ms delay
     }
-    function displayAlert() {
-        alert('Thank you for going through the recommendations!');
+    function endSurvey() {
+
+        // Hide all blocks with class .recommendation-block
+        let recommendationBlocks = document.querySelectorAll('.recommendation-block');
+        recommendationBlocks.forEach(block => block.style.display = 'none');
+
+        // Get the end-survey div
+        let endSurveyDiv = document.querySelector('.container.mt-5.end-survey');
+        if (endSurveyDiv) {
+            // Display the end-survey div
+            endSurveyDiv.style.display = 'block';
+        }
     }
 </script>
