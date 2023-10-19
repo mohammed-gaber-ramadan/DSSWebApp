@@ -37,32 +37,57 @@
 </style>
 
 <div class="container mt-5">
-    <div class="dss-intro">
-        <h2>Welcome to the Decision Support System (DSS)</h2>
-        <p>
-            This DSS is designed to help you select suitable management processes and tools in the context of telework for software developers. While the system is still under development, we believe it can be a valuable tool for project managers navigating the challenges of managing telework teams.
-        </p>
 
-        <h4>How to Use the DSS:</h4>
-        <ol>
-            <li>Begin by answering the survey questions provided.</li>
-            <li>After completing the survey, the DSS will analyze your inputs to identify suitable processes and tools.</li>
-            <li>Based on the workflow analysis, the DSS will present you with tailored recommendations.</li>
-        </ol>
-        <p>
-            <strong>Note:</strong> Given that the DSS is still a work-in-progress, it's essential to review the recommendations thoroughly before applying them in a real-world setting.
-        </p>
-
-        <h4>Your Feedback Matters:</h4>
-        <p>
-            Once you've concluded your project, we would appreciate it if you could evaluate the recommendations provided by the DSS. Your feedback is vital. It will help us refine the system, ensuring it becomes increasingly accurate and beneficial for project managers in the future.
-        </p>
-
-        <p>Thank you for your participation and trust in our system!</p>
+    <div class="container mt-4 dss-intro">
+    <!-- DSS Welcome Card -->
+    <div class="card mb-4">
+        <div class="card-header">
+            Welcome to the Decision Support System (DSS)
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                This DSS is constructed to aid in selecting apt management procedures and tools tailored for teleworking software developers. Although still evolving, we are confident about its potential as a significant tool for project managers steering the intricacies of managing remote workforces.
+            </p>
+        </div>
+    </div>
+    
+    <!-- How to Use DSS Card -->
+    <div class="card mb-4">
+        <div class="card-header">
+            How to Use the DSS
+        </div>
+        <div class="card-body">
+            <ol>
+                <li>Initiate by answering the supplied survey queries.</li>
+                <li>Upon survey completion, the DSS will scrutinize your data to pinpoint fitting procedures and tools.</li>
+                <li>In sync with the workflow examination, the DSS will offer you personalized advice.</li>
+            </ol>
+            <p class="mt-3 text-warning">
+                <strong>Note:</strong> As the DSS remains in its developmental phase, ensure you meticulously review its suggestions before their real-world deployment.
+            </p>
+        </div>
+    </div>
+    
+    <!-- Feedback Card -->
+    <div class="card mb-4">
+        <div class="card-header">
+            Your Feedback Matters
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                Post your project conclusion, we would be grateful for an evaluation of the DSS's proposals. Your insights are crucial. They will guide us in honing the system, making it increasingly precise and advantageous for future project managers.
+            </p>
+        </div>
+    </div>
+    
+    <!-- Thank You Note -->
+    <div class="text-center mt-4">
+        <h5>Thank you for your active engagement and confidence in our system!</h5>
+    </div>
 
         <!-- Start button -->
         <button class="btn btn-primary" onclick="startSurvey()">Start</button>
-    </div>
+</div>
 
     <form method="post">
         @foreach (var question in Model.Questions)
