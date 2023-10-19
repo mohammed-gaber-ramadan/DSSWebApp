@@ -540,6 +540,85 @@
     </div>
 }
 
+@if (Model.IsAgileRecommendation)
+{
+    <div class="container mt-5 recommendation-block" style="display:none;">
+        <div class="container mt-4">
+            <!-- Recommendations Card -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    Agile Software Development Methodology Recommendation
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        We suggest adopting an agile software development approach. Agile techniques prioritize adaptability and flexibility, crucial for projects laden with uncertainties. They revolve around releasing smaller, operational software chunks periodically, enabling prompt and recurring user feedback. Agile places strong emphasis on teamwork and transparent communication, quintessential for steering intricate and ambiguous projects.
+                    </p>
+
+                    <h5 class="mt-3">Key Advantages of Agile for High-Uncertainty Projects:</h5>
+                    <ul>
+                        <li>
+                            <strong>Flexibility:</strong> Agile methodologies can adeptly navigate change, crucial for projects overwhelmed by uncertainty, letting teams adapt swiftly and effectively.
+                        </li>
+                        <li>
+                            <strong>Early feedback:</strong> Agile's approach to releasing concise, functional software fragments routinely ensures frequent user feedback. This feedback aids in refining the product to resonate with user demands.
+                        </li>
+                        <li>
+                            <strong>Collaboration and communication:</strong> Agile accentuates mutual cooperation and open dialogue. This cohesion is invaluable for projects teeming with complexity and vagueness, ensuring uniform vision and concerted efforts among team members.
+                        </li>
+                    </ul>
+                    <img src="images/13.jpg">
+                    <img src="images/14.jpg">
+                </div>
+                <div class="card-footer">
+                    In essence, for projects characterized by heightened uncertainties, agile methodologies emerge as the preferred choice owing to their flexibility, feedback-centric approach, and collaborative spirit.
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
+    </div>
+}
+
+
+@if (Model.IsWaterfallRecommendation)
+{
+    <div class="container mt-5 recommendation-block" style="display:none;">
+        <div class="container mt-4">
+    <!-- Recommendations Card -->
+    <div class="card mb-4">
+        <div class="card-header">
+            Waterfall Software Development Methodology Recommendation
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                We suggest embracing a waterfall software development methodology. Distinct from agile, waterfall methodologies manifest a higher degree of structure and sequence. They stand as an apt choice for projects where the stipulations are clearly outlined, accompanied by minimal uncertainties. The project is compartmentalized into clear-cut phases like requirements extraction, design, execution, testing, and rollout. Each stage is methodically concluded before initiating the succeeding one, ensuring a transparent project trajectory and adherence to timeline and budgetary constraints.
+            </p>
+            
+            <h5 class="mt-3">Primary Advantages of Waterfall for Low-Uncertainty Projects:</h5>
+            <ul>
+                <li>
+                    <strong>Structure:</strong> Offering a higher degree of methodicalness and sequence than agile, waterfall methodologies facilitate a transparent project trajectory, assuring timely and budgetary compliance.
+                </li>
+                <li>
+                    <strong>Efficiency:</strong> Projects exhibiting minimal uncertainties can witness heightened efficiency under waterfall, as teams can concentrate on individual project phases, unhindered by alterations in stipulations or designs.
+                </li>
+                <li>
+                    <strong>Predictability:</strong> Characterized by explicit project plans, waterfall methodologies amplify the predictability factor, enabling accurate estimation of phase-specific time and resources.
+                </li>
+            </ul>
+                    <img src="images/15.png">
+        </div>
+        <div class="card-footer">
+            In summation, for projects with substantially low uncertainties, the waterfall methodology emerges superior, attributed to its structure, efficiency, and predictability. However, one must be prepared for unforeseen challenges even in such projects. Adopting contingencies or integrating agile flexibility can be pivotal in swiftly and adeptly countering such deviations.
+        </div>
+    </div>
+</div>
+        <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
+    </div>
+}
+
 <div class="container mt-5 end-survey" style="display:none;">
     <div class="card">
         <div class="card-header">

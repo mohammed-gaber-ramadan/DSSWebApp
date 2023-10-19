@@ -23,10 +23,8 @@ namespace DSSWebApp.Pages
         public bool IsProjectTypeKanbanRecommendation { get; set; }
         public bool IsProjectTypeScrumRecommendation { get; set; }
         public bool IsCloudToolsRecommendation { get; set; }
-
-
-
-
+        public bool IsAgileRecommendation { get; set; }
+        public bool IsWaterfallRecommendation { get; set; }
 
 
         public void OnGet()
@@ -119,8 +117,28 @@ namespace DSSWebApp.Pages
                         IsCloudToolsRecommendation = true;
                     }
                     else
-                    { 
-                        IsCloudToolsRecommendation = false; 
+                    {
+                        IsCloudToolsRecommendation = false;
+                    }
+                }
+                //How much uncertainty is there in the project?
+                if (answer.Key == "Q3")
+                {
+                    if (answer.Value == "Medium" || answer.Value == "High" || answer.Value == "Very high")
+                    {
+                        IsAgileRecommendation = true;
+                    }
+                    else
+                    {
+                        IsAgileRecommendation = false;
+                    }
+                    if (answer.Value == "Very low" || answer.Value == "Low")
+                    {
+                        IsWaterfallRecommendation = true;
+                    }
+                    else
+                    {
+                        IsWaterfallRecommendation = false;
                     }
                 }
             }
