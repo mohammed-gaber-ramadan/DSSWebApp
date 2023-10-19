@@ -29,30 +29,40 @@
         margin: 5px 0;
         padding-left: 25px;
     }
+
+    /* Initially hide the form */
+    form {
+        display: none;
+    }
 </style>
 
 <div class="container mt-5">
-    <h2>Welcome to the Decision Support System (DSS)</h2>
-    <p>
-        This DSS is designed to help you select suitable management processes and tools in the context of telework for software developers. While the system is still under development, we believe it can be a valuable tool for project managers navigating the challenges of managing telework teams.
-    </p>
+    <div class="dss-intro">
+        <h2>Welcome to the Decision Support System (DSS)</h2>
+        <p>
+            This DSS is designed to help you select suitable management processes and tools in the context of telework for software developers. While the system is still under development, we believe it can be a valuable tool for project managers navigating the challenges of managing telework teams.
+        </p>
 
-    <h4>How to Use the DSS:</h4>
-    <ol>
-        <li>Begin by answering the survey questions provided.</li>
-        <li>After completing the survey, the DSS will analyze your inputs to identify suitable processes and tools.</li>
-        <li>Based on the workflow analysis, the DSS will present you with tailored recommendations.</li>
-    </ol>
-    <p>
-        <strong>Note:</strong> Given that the DSS is still a work-in-progress, it's essential to review the recommendations thoroughly before applying them in a real-world setting.
-    </p>
+        <h4>How to Use the DSS:</h4>
+        <ol>
+            <li>Begin by answering the survey questions provided.</li>
+            <li>After completing the survey, the DSS will analyze your inputs to identify suitable processes and tools.</li>
+            <li>Based on the workflow analysis, the DSS will present you with tailored recommendations.</li>
+        </ol>
+        <p>
+            <strong>Note:</strong> Given that the DSS is still a work-in-progress, it's essential to review the recommendations thoroughly before applying them in a real-world setting.
+        </p>
 
-    <h4>Your Feedback Matters:</h4>
-    <p>
-        Once you've concluded your project, we would appreciate it if you could evaluate the recommendations provided by the DSS. Your feedback is vital. It will help us refine the system, ensuring it becomes increasingly accurate and beneficial for project managers in the future.
-    </p>
+        <h4>Your Feedback Matters:</h4>
+        <p>
+            Once you've concluded your project, we would appreciate it if you could evaluate the recommendations provided by the DSS. Your feedback is vital. It will help us refine the system, ensuring it becomes increasingly accurate and beneficial for project managers in the future.
+        </p>
 
-    <p>Thank you for your participation and trust in our system!</p>
+        <p>Thank you for your participation and trust in our system!</p>
+
+        <!-- Start button -->
+        <button class="btn btn-primary" onclick="startSurvey()">Start</button>
+    </div>
 
     <form method="post">
         @foreach (var question in Model.Questions)
@@ -71,3 +81,11 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+
+<!-- JavaScript function to hide introduction div and display form -->
+<script>
+    function startSurvey() {
+        document.querySelector(".dss-intro").style.display = "none";
+        document.querySelector("form").style.display = "block";
+    }
+</script>

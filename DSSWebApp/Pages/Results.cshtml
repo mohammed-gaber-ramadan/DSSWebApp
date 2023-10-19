@@ -215,6 +215,125 @@
     </div>
 }
 
+
+@if (Model.IsSupportBigTeamsRecommendation)
+{
+    <div class="container mt-5 recommendation-block" style="display:none;">
+        <h2>To support big teams to be remote and productive, We recommend the following tools:</h2>
+
+        <!-- Video Conferencing Card -->
+        <div class="card mt-4">
+            <div class="card-header">
+                Video Conferencing
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Zoom</h5>
+                <p class="card-text">We recommend using Zoom for video conferencing due to its scalable features that are well-suited for larger teams. Zoom offers a variety of features that can be useful for large teams, such as breakout rooms, polling, and screen sharing. Additionally, Zoom is relatively affordable, making it a good option for teams on a budget.</p>
+            </div>
+        </div>
+
+        <!-- E-learning Card -->
+        <div class="card mt-4">
+            <div class="card-header">
+                E-learning
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Chamilo</h5>
+                <p class="card-text">We recommend using Chamilo for e-learning due to its comprehensive modules that are tailored for diverse educational needs. Chamilo is an open-source LMS that offers a wide range of features, including course creation, student management, and assessment tools. Additionally, Chamilo is highly flexible and customizable, making it a good choice for a variety of educational institutions.</p>
+            </div>
+        </div>
+
+        <!-- Project Management Tools Card -->
+        <div class="card mt-4">
+            <div class="card-header">
+                Project Management Tools
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Bitrix24</h5>
+                <p class="card-text">We recommend using Bitrix24 for project management due to its robust capabilities in handling intricate project tasks. Bitrix24 is an all-in-one project management software that includes features such as task management, time tracking, and collaboration tools. Additionally, Bitrix24 is able to handle complex projects with ease, making it a good choice for teams working on large and complex projects.</p>
+            </div>
+        </div>
+
+        <!-- Instant Messaging Card -->
+        <div class="card mt-4">
+            <div class="card-header">
+                Instant Messaging
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Slack (Paid Version)</h5>
+                <p class="card-text">We recommend using Slack paid version which can be used for a variety of purposes, such as team chats, file sharing, and project management. It is a good choice for teams of all sizes, but it is especially well-suited for startups because it is easy to use and can be scaled to meet the needs of growing teams.</p>
+
+                <strong>Features:</strong>
+                <ul>
+                    <li>Channels: Allow teams to organize communication around specific projects, topics, or teams.</li>
+                    <li>Threads: Allow users to have focused conversations within a channel.</li>
+                    <li>Integrations: Integrates with a wide range of tools and services.</li>
+                    <li>Bots: Can be used to automate tasks, provide information, and answer questions.</li>
+                </ul>
+
+                <strong>Use Cases:</strong>
+                <ul>
+                    <li>Code review: Facilitate sharing and discussion directly in Slack.</li>
+                    <li>Deployment: Automate the process by integrating with CI/CD tools.</li>
+                    <li>Support: Provide support to developers by allowing queries and getting help.</li>
+                </ul>
+                <img src="images/11.png">
+            </div>
+        </div>
+
+        <!-- Google Cloud Platform Card -->
+        <div class="card mt-4">
+            <div class="card-header">
+                Cloud Computing
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Google Cloud Platform (GCP)</h5>
+                <p class="card-text">Google Cloud Platform (GCP) is a good choice for startups for the following reasons:</p>
+                <ul>
+                    <li>Scalability: GCP is highly scalable for startups to grow their infrastructure.</li>
+                    <li>Reliability: One of the most reliable cloud platforms available.</li>
+                    <li>Cost-effectiveness: Offers a variety of pricing options, including pay-as-you-go and sustained use discounts.</li>
+                    <li>Ease of use: Relatively easy-to-use, beneficial for startups with limited IT resources.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Team Monitoring Card -->
+        <div class="card mt-4">
+            <div class="card-header">
+                Team Monitoring
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">SmartRadar</h5>
+                <p class="card-text">Given the sensitivity of your project and the size of your team, we recommend using SmartRadar to monitor the team progress in a more advanced way.</p>
+
+                <p>SmartRadar is a software tool that uses support vector machines (SVMs) to detect anomalous behavior in remote workers. It collects data on keyboard and mouse movements, program usage time, and other factors to create a profile of each user's normal behavior. Any deviation from this profile is flagged as an anomaly.</p>
+
+                <strong>Features:</strong>
+                <ul>
+                    <li>Data collection: Creates a profile of each user's behavior based on keyboard and mouse movements, program usage time, etc.</li>
+                    <li>Anomaly detection: Uses SVMs to detect deviations from a user's normal behavior.</li>
+                    <li>Reporting: Generates reports for managers to identify and investigate anomalous behavior.</li>
+                </ul>
+
+                <strong>Use Cases:</strong>
+                <ul>
+                    <li>Increased activity: Detects increased keyboard and mouse activity that might indicate suspicious activity.</li>
+                    <li>Abrupt changes: Monitors for abrupt changes in program usage that might indicate a switch to suspicious activity.</li>
+                    <li>Copy and paste operations: Detects increased operations that could indicate copying of sensitive data.</li>
+                    <li>Inactivity: Monitors for long periods of inactivity that could indicate that a user is away from their computer or engaged in suspicious activity.</li>
+                </ul>
+
+                <p>Overall, SmartRadar is a valuable tool for managers looking to detect anomalous behavior in remote workers. It's user-friendly and can provide insightful reports to help identify and investigate any suspicious activity.</p>
+                <img src="images/12.png">
+            </div>
+        </div>
+
+        <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
+    </div>
+}
+
 <div class="container mt-5 end-survey" style="display:none;">
     <div class="card">
         <div class="card-header">

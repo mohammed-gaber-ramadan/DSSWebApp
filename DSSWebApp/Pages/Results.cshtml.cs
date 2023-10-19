@@ -18,6 +18,8 @@ namespace DSSWebApp.Pages
         public bool IsTrustRecommendation { get; set; }
         public bool IsTurnoverRecommendation { get; set; }
         public bool IsSkillsRecommendation { get; set; }
+        public bool IsSupportBigTeamsRecommendation { get; set; }
+
 
 
         public void OnGet()
@@ -25,7 +27,9 @@ namespace DSSWebApp.Pages
             // Get the answers dictionary from the ViewData property.
             Answers = TempData["answers"] as Dictionary<string, string>;
 
-            //TrustRecommendationHtml = "<p>No recommendations available for your selection.</p>";
+            var strProjectTeamSizeAnswer = "";
+            var strProjectComplexAnswer = "";
+            var strProjectBudgetAnswer = "";
 
             foreach (var answer in Answers)
             {
@@ -65,6 +69,29 @@ namespace DSSWebApp.Pages
                         IsSkillsRecommendation = false;
                     }
                 }
+                if (answer.Key == "Q1")
+                {
+                    strProjectTeamSizeAnswer = answer.Value;
+                }
+                if (answer.Key == "Q2")
+                {
+                    strProjectComplexAnswer = answer.Value;
+                }
+                if (answer.Key == "Q5")
+                {
+                    strProjectBudgetAnswer = answer.Value;
+                }
+            }
+            if ((strProjectTeamSizeAnswer == "Medium" || strProjectTeamSizeAnswer == "Large" || strProjectTeamSizeAnswer == "Very large")
+                &&
+                (strProjectComplexAnswer == "Medium" || strProjectComplexAnswer == "Complex" || strProjectComplexAnswer == "Very complex")
+                && (strProjectBudgetAnswer == "Very loose" || strProjectBudgetAnswer == "Loose" || strProjectBudgetAnswer == "Medium"))
+            {
+                IsSupportBigTeamsRecommendation = true;
+            }
+            else
+            {
+                IsSupportBigTeamsRecommendation = false;
             }
         }
 
