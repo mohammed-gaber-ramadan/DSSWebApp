@@ -334,6 +334,103 @@
     </div>
 }
 
+@if (Model.IsSupporSmallTeamsRecommendation)
+{
+    <div class="container mt-5 recommendation-block" style="display:none;">
+        <!-- Introduction Card -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <p class="card-text">
+                    To support small remote teams with limited budgets and less complex projects, we recommend the following tools:
+                </p>
+            </div>
+        </div>
+
+        <!-- Videoconferencing Card -->
+        <div class="card mb-4">
+            <div class="card-header">
+                Videoconferencing: Skype
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Skype is a video conferencing platform that is accessible and affordable for smaller teams. It offers a variety of features that are well-suited for small teams, such as group video calls, screen sharing, and file sharing. Additionally, Skype is easy to use, making it a good choice for teams with varying levels of technical expertise.
+                </p>
+            </div>
+        </div>
+
+        <!-- E-learning Card -->
+        <div class="card mb-4">
+            <div class="card-header">
+                E-learning: Moodle
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Moodle is a cost-effective LMS with a straightforward interface tailored for simpler educational engagements. It offers a variety of features useful for small teams, such as course creation, student management, and assessment tools. Moreover, Moodle is highly customizable, making it a suitable choice for various educational institutions.
+                </p>
+            </div>
+        </div>
+
+        <!-- Project Management Tools Card -->
+        <div class="card mb-4">
+            <div class="card-header">
+                Project Management Tools: Notion
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Notion is a viable tool for projects that require less intricate functionalities. It's a versatile tool offering features such as task management, note-taking, and collaboration tools. Additionally, Notion is relatively affordable and easy to use, making it a suitable choice for smaller teams.
+                </p>
+            </div>
+        </div>
+
+        <!-- Instant Messaging Card -->
+        <div class="card mb-4">
+            <div class="card-header">
+                Instant messaging: Slack
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    We recommend using Slack which can be used for a variety of purposes, such as team chats, file sharing, and project management. It is a good choice for teams of all sizes, but it is especially well-suited for startups because it is easy to use and can be scaled to meet the needs of growing teams.
+                </p>
+                <h5 class="mt-3">Features:</h5>
+                <ul>
+                    <li>
+                        <strong>Channels:</strong> Channels allow teams to organize their communication around specific projects, topics, or teams. This can help reduce noise and make it easier to find the information you need.
+                    </li>
+                    <li>
+                        <strong>Threads:</strong> Threads allow users to have focused conversations about specific topics within a channel. This can help keep the channel organized and on-topic.
+                    </li>
+                    <li>
+                        <strong>Integrations:</strong> Slack integrates with a wide range of other tools and services, including project management tools, code repositories, and CI/CD tools. This allows teams to automate tasks and workflows, and to receive notifications directly in Slack.
+                    </li>
+                    <li>
+                        <strong>Bots:</strong> Slack bots can be used to automate tasks, provide information, and answer questions. For example, a bot could remind developers to review code or provide updates on the status of a build.
+                    </li>
+                </ul>
+
+                <h5 class="mt-3">How Slack enhances the software development process:</h5>
+                <ul>
+                    <li>
+                        <strong>Code review:</strong> Slack can facilitate code review by allowing developers to share and discuss code directly in Slack. This reduces the time for code reviews and merges.
+                    </li>
+                    <li>
+                        <strong>Deployment:</strong> Slack can automate the deployment process by integrating with CI/CD tools. This reduces error risks and makes deployments efficient.
+                    </li>
+                    <li>
+                        <strong>Support:</strong> Slack can provide support to developers by allowing them to ask questions and get help from other team members. This reduces problem-resolution time and keeps developers productive.
+                    </li>
+                </ul>
+                <p class="card-text">
+                    Overall, Slack is a powerful tool that can enhance the software development process in several ways. Its features for team communication, collaboration, and automation make it a valuable asset for any software development team.
+                </p>
+                <img src="images/11.png">
+            </div>
+        </div>
+
+        <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
+    </div>
+}
+
 <div class="container mt-5 end-survey" style="display:none;">
     <div class="card">
         <div class="card-header">

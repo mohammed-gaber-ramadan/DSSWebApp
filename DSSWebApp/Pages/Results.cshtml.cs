@@ -19,6 +19,7 @@ namespace DSSWebApp.Pages
         public bool IsTurnoverRecommendation { get; set; }
         public bool IsSkillsRecommendation { get; set; }
         public bool IsSupportBigTeamsRecommendation { get; set; }
+        public bool IsSupporSmallTeamsRecommendation { get; set; }
 
 
 
@@ -92,6 +93,17 @@ namespace DSSWebApp.Pages
             else
             {
                 IsSupportBigTeamsRecommendation = false;
+            }
+            if ((strProjectTeamSizeAnswer == "Small" || strProjectTeamSizeAnswer == "Very small")
+                &&
+                (strProjectComplexAnswer == "Simple" || strProjectComplexAnswer == "Very simple")
+                && (strProjectBudgetAnswer == "Tight" || strProjectBudgetAnswer == "Very tight"))
+            {
+                IsSupporSmallTeamsRecommendation = true;
+            }
+            else
+            {
+                IsSupporSmallTeamsRecommendation = false;
             }
         }
 
