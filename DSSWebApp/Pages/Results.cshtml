@@ -431,6 +431,115 @@
     </div>
 }
 
+@if (Model.IsProjectTypeKanbanRecommendation)
+{
+    <div class="container mt-5 recommendation-block" style="display:none;">
+        <div class="container mt-4">
+            <!-- Kanban Card -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    Kanban: Suitable for Maintenance & Enhancement or Evaluation Projects
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Kanban is a good choice for Maintenance & Enhancement or Evaluation projects because it is a flexible and adaptable approach that allows for changes to be made easily. This is crucial for these types of projects as they often involve working with existing code or systems, which can be intricate and unpredictable.
+                    </p>
+
+                    <h5 class="mt-3">Benefits of Kanban for these projects:</h5>
+                    <ul>
+                        <li>
+                            <strong>Flexible and adaptable:</strong> Kanban is a pull-based system. Work commences only when there is capacity. This adaptability facilitates changes to the backlog, particularly important given that such projects often entail dealing with complex, pre-existing systems or code.
+                        </li>
+                        <li>
+                            <strong>Visualized workflow:</strong> Utilizing a Kanban board helps visualize the workflow, thereby enabling the identification of bottlenecks. This improves both the efficiency and effectiveness of the team.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="mt-4">
+                In the end, the ideal method to determine the right agile approach for your project is by weighing the unique needs and stipulations of the project. Nonetheless, the aforementioned recommendations serve as a helpful starting point.
+            </p>
+        </div>
+
+        <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
+    </div>
+}
+
+@if (Model.IsProjectTypeScrumRecommendation)
+{
+    <div class="container mt-5 recommendation-block" style="display:none;">
+        <div class="container mt-4">
+            <!-- Scrum Card -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    Scrum: Ideal for New Development, Integration, or Migration Projects
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Scrum is a good choice for New Development, Integration, or Migration projects because it is a structured and disciplined approach that ensures projects are completed on time and within budget. Furthermore, Scrum promotes collaboration and communication within the team, crucial for these types of intricate projects.
+                    </p>
+
+                    <h5 class="mt-3">Benefits of Scrum for these projects:</h5>
+                    <ul>
+                        <li>
+                            <strong>Structured and disciplined:</strong> Scrum's highly structured and disciplined approach to project management ensures that projects such as New Development, Integration, or Migration are delivered punctually and without exceeding the budget.
+                        </li>
+                        <li>
+                            <strong>Collaboration and communication:</strong> Emphasizing on teamwork, Scrum fosters collaboration and communication. This is paramount for intricate projects, where input and expertise from several team members are often required.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="mt-4">
+                When determining the appropriate agile approach for your project, it's crucial to take into account the unique needs and demands of your project. Nevertheless, the insights provided above serve as a valuable initial guide.
+            </p>
+        </div>
+        <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
+    </div>
+}
+
+
+@if (Model.IsCloudToolsRecommendation)
+{
+    <div class="container mt-5 recommendation-block" style="display:none;">
+        <div class="container mt-4">
+            <!-- Recommendations Card -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    Recommendations for Enhancing Proficiency in Cloud-based Software Development Tools
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Considering your team's nascent experience with cloud-based software development tools, we offer the subsequent recommendations to augment proficiency:
+                    </p>
+
+                    <h5 class="mt-3">Recommendations:</h5>
+                    <ol>
+                        <li>
+                            <strong>Training:</strong> Commence a structured succession of training sessions that cover basic to intermediate concepts related to cloud-based software development tools.
+                        </li>
+                        <li>
+                            <strong>Documentation and Support:</strong> Make available user-friendly manuals and reference documents. Additionally, have an IT support team in place to attend to any inquiries or issues.
+                        </li>
+                        <li>
+                            <strong>Mentoring and Teamwork:</strong> Advocate for mentor-mentee relationships within the team and endorse team projects. This promotes hands-on learning.
+                        </li>
+                        <li>
+                            <strong>Feedback Mechanisms:</strong> Set up a sturdy feedback system to identify potential areas for improvement, ensuring ongoing development and fine-tuning of training methodologies.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary next-button" onclick="showNext(this);">Next</button>
+        <button class="btn btn-success finish-button" style="display: none;" onclick="endSurvey();">Finish</button>
+    </div>
+}
+
 <div class="container mt-5 end-survey" style="display:none;">
     <div class="card">
         <div class="card-header">

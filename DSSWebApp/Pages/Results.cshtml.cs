@@ -20,6 +20,12 @@ namespace DSSWebApp.Pages
         public bool IsSkillsRecommendation { get; set; }
         public bool IsSupportBigTeamsRecommendation { get; set; }
         public bool IsSupporSmallTeamsRecommendation { get; set; }
+        public bool IsProjectTypeKanbanRecommendation { get; set; }
+        public bool IsProjectTypeScrumRecommendation { get; set; }
+        public bool IsCloudToolsRecommendation { get; set; }
+
+
+
 
 
 
@@ -70,17 +76,52 @@ namespace DSSWebApp.Pages
                         IsSkillsRecommendation = false;
                     }
                 }
+                //How large is the project team?
                 if (answer.Key == "Q1")
                 {
                     strProjectTeamSizeAnswer = answer.Value;
                 }
+                //How complex is the project?
                 if (answer.Key == "Q2")
                 {
                     strProjectComplexAnswer = answer.Value;
                 }
+                //How constrained is the project's budget?
                 if (answer.Key == "Q5")
                 {
                     strProjectBudgetAnswer = answer.Value;
+                }
+                //What is the type of software project?
+                if (answer.Key == "Q8")
+                {
+                    if (answer.Value == "Maintenance & enhancement" || answer.Value == "Evaluation")
+                    {
+                        IsProjectTypeKanbanRecommendation = true;
+                    }
+                    else
+                    {
+                        IsProjectTypeKanbanRecommendation = false;
+                    }
+                    if (answer.Value == "New development" || answer.Value == "Integration" || answer.Value == "Migration")
+                    {
+                        IsProjectTypeScrumRecommendation = true;
+                    }
+                    else
+                    {
+                        IsProjectTypeScrumRecommendation = false;
+                    }
+                }
+                //To what extent does your team have experience using cloud-based software development tools?
+                if (answer.Key == "Q15")
+                {
+                    if (answer.Value == "Very little experience" || answer.Value == "Some experience" || answer.Value == "Moderate experience")
+                    {
+                        IsCloudToolsRecommendation = true;
+                    }
+                    else
+                    { 
+                        IsCloudToolsRecommendation = false; 
+                    }
                 }
             }
             if ((strProjectTeamSizeAnswer == "Medium" || strProjectTeamSizeAnswer == "Large" || strProjectTeamSizeAnswer == "Very large")
